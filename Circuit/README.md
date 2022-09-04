@@ -247,3 +247,4 @@ $$i=i_1+i_2
 $$R=u_s/i=\frac{u_s}{u_s/R_1+((u_s+\alpha R_2i)/(R_2+R_3))} \\=\frac{1}{(1/R_1)+((1+\frac{\alpha R_2}{R})/(R_2+R_3))}$$
 整理后得，
 $$R=\frac{R_1R_3+(1-\alpha)R_1R_2}{R_1+R_2+R_3}$$
+
