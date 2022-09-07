@@ -1,7 +1,7 @@
 # **统计学习方法概论**
 ## **1.1总论**
 <p align="center">
-        <img src="http://115.159.24.45:3000/statistical_learning/pic/Fig1.png" width="70%"/>
+        <img src="http://115.159.24.45:3000/statistical_learning/pic/Fig1.png" width="40%"/>
 </p>
 <p align="center">总体学习框架图</p>
 
