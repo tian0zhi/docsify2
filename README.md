@@ -16,6 +16,8 @@
 
 > [DeepLearning 深度学习](DeepLearning/README.md) 
 
+> [Code 编程练习](Code/README.md) 
+
 > [Paper write 文章写作](Paper_write/README.md) 
 
 >  <a href="http://115.159.24.45:3000/docsify_demo/">Docsify Demo 测试用例</a>
