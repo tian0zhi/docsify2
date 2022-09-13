@@ -1,0 +1,35 @@
+{
+  "name": "docsify-katex",
+  "version": "1.4.4",
+  "description": "KaTeX support for docsify",
+  "main": "dist/docsify-katex.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "dev": "webpack -w --mode development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/upupming/docsify-katex.git"
+  },
+  "keywords": [
+    "KaTeX",
+    "docsify",
+    "MathJax",
+    "math",
+    "LaTeX"
+  ],
+  "author": "upupming",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/upupming/docsify-katex/issues"
+  },
+  "homepage": "https://github.com/upupming/docsify-katex#readme",
+  "dependencies": {
+    "katex": "^0.11.1"
+  },
+  "devDependencies": {
+    "webpack": "^4.28.2",
+    "webpack-cli": "^3.3.0"
+  }
+}
