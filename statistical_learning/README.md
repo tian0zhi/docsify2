@@ -338,3 +338,15 @@ $$
 - 留一交叉验证
 
 折交叉验证的特殊情形是$S=N$称为留一交叉验证(Leave-one-out cross validation)，往往在数据缺乏的情况下使用。这里$N$是给定数据集的容量。
+
+### **1.6&nbsp;&nbsp;泛化能力**
+
+### **1.7&nbsp;&nbsp;生成模型与判断模型**
+监督学习的任务就是学习一个模型，应用这一模型，对给定的输入预测相应的输出。这一个模型的一般形式为决策函数:
+
+$$Y=f(X)$$
+或者条件概率分布:
+$$P(Y|X)$$
+
+监督学习方法又可以分为生成方法 (generative approach) 和判别方法 (discrimine active approach) 所学到的模型分别称为生成模型(generative model)和判别模型(discriminative model)
+
