@@ -590,3 +590,6 @@ $$P(Y=c_k|X=x)=\frac{P(X=x|Y=c_k)P(Y=c_k)}{P(X=x)\Rightarrow\sum_{k}P(X=x|Y=c_k)
 $$y=\arg \max _{c_{k}} P\left(Y=c_{k}\right) \prod_{j=1}^{n} P\left(X_{j}=x^{(j)} | Y=c_{k}\right)$$
 
 
+## **第5章&nbsp;&nbsp;决策树模型**
+
+## **第6章&nbsp;&nbsp;逻辑斯谛回归与最大熵模型**
