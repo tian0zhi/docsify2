@@ -677,3 +677,67 @@ $$
 初始电流为$I_0,\tau = \frac{L}{R}$，有
 $$i = I_0e^{-\frac{t}{\tau}}$$
 $$U_R = RI_0e^{-\frac{t}{\tau}}$$
+
+### **7.3 一阶电路的零状态响应**
+零状态响应就是电路在零初始状态下(动态元件初始储能为零)由外施激励引起的响应。
+- 对于RC电路
+<p align="center">
+        <img src="http://115.159.24.45:3000/Circuit/pic/Fig38.png" width="50%"/>
+</p>
+
+如上图所示RC串联电路，开关S闭合前电路处于零初始状态，即$u_c(0)=0$在t=0时刻，开关S闭合，电路接入直流电压源$u_s$。根据KVL，有
+$$u_R+u_C = U_S$$
+又，
+$$u_R = Ri$$
+and
+$$Q = UC, Q = it$$
+联立等式两边求导->
+$$i=C\frac{dU}{dt}$$
+得，
+$$RC\frac{du_C}{dt}+u_C = U_S$$
+此方程为一阶线性非齐次方程。方程的解由非齐次方程的特解$u_{c}^{'}$和对应的齐次方程的通解$u_{c}^{''}$两个分量组成，即
+$$u_c = u_{c}^{'}+u_{c}^{''}$$
+
+特解（稳态分量）：$u_{\mathrm{C}}^{\prime} = U_{S}$
+通解（瞬态分量）：$u_{\mathrm{C}}^{\prime \prime}=A e^{-\frac{1}{R C} t}$
+
+$u_{\mathrm{C}}=U_{S}+A e^{-\frac{1}{R C} t}$
+and
+$u_{\mathrm{C}}(0+)=u_{\mathrm{C}}(0-)=0$
+得：$A=-U_{S}$
+
+$u_{\mathrm{C}}=U_{S}-U_{S} e^{-\frac{1}{R C} t}=U_{S}(1-e^{-\frac{1}{R C} t})\qquad\qquad\qquad$
+
+由上式可以看出，电容的电压$u_c$变化的快慢，由$\tau=R C$决定$\tau$越大，充电越慢，$\tau$越小，充电越快。
+
+由上式可得电路上的电流为：
+$$i=C \frac{\mathrm{d} u_{\mathrm{C}}}{\mathrm{d} t}=\frac{U_{\mathrm{s}}}{R} e^{-\frac{t}{R C}}\qquad\qquad\qquad$$
+
+$u_c与i$的变化图如下所示，电流会有跃变。
+<p align="center">
+        <img src="http://115.159.24.45:3000/Circuit/pic/Fig39.png" width="40%"/>
+</p>
+- 对于RL电路
+<p align="center">
+        <img src="http://115.159.24.45:3000/Circuit/pic/Fig40.png" width="50%"/>
+</p>
+
+电路为零状态响应，开关打开前，电感电流为零。开关打开后
+$i_{\mathrm{L}}(0+)=i_{\mathrm{L}}(0-)=0$
+换路后，电流源与$R_s$串联后，电流仍为$I_s$，由KCL可得：
+$i_{R}+i_{L}=I_{\mathrm{s}}$
+由$u=L \frac{\mathrm{d} i}{\mathrm{~d} t}$得电路微分方程：
+
+$$\frac{L}{R} \frac{\mathrm{d} i_{L}}{\mathrm{~d} t}+i_{L}=I_{\mathrm{s}}$$
+
+$$i_{\mathrm{L}}=i_{\mathrm{L}}^{\prime}+i_{\mathrm{L}}^{\prime \prime}$$
+
+特解（稳态分量）：$i_{\mathrm{L}}^{\prime} = I_{S}$
+通解（瞬态分量）：$i_{\mathrm{L}}^{\prime \prime}=A e^{-\frac{R}{ L} t}$
+
+and $i_{\mathrm{L}}(0+)=i_{\mathrm{L}}(0-)=0$
+得：
+
+$A=-I_{S},i_{\mathrm{L}}=I_{S}-I_{S} e^{-\frac{R}{L} t}=I_{S}(1-e^{-\frac{R}{L} t})\qquad\qquad\qquad$
+
+由上式可知，电感电流$i_{\mathrm{L}}$变化的快慢由$\tau=\frac{L}{R}$决定，$\tau$越大，充电越慢，$\tau$越小，充电越快。
