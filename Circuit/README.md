@@ -699,6 +699,7 @@ $$RC\frac{du_C}{dt}+u_C = U_S$$
 $$u_c = u_{c}^{'}+u_{c}^{''}$$
 
 特解（稳态分量）：$u_{\mathrm{C}}^{\prime} = U_{S}$
+
 通解（瞬态分量）：$u_{\mathrm{C}}^{\prime \prime}=A e^{-\frac{1}{R C} t}$
 
 $u_{\mathrm{C}}=U_{S}+A e^{-\frac{1}{R C} t}$
@@ -733,6 +734,7 @@ $$\frac{L}{R} \frac{\mathrm{d} i_{L}}{\mathrm{~d} t}+i_{L}=I_{\mathrm{s}}$$
 $$i_{\mathrm{L}}=i_{\mathrm{L}}^{\prime}+i_{\mathrm{L}}^{\prime \prime}$$
 
 特解（稳态分量）：$i_{\mathrm{L}}^{\prime} = I_{S}$
+
 通解（瞬态分量）：$i_{\mathrm{L}}^{\prime \prime}=A e^{-\frac{R}{ L} t}$
 
 and $i_{\mathrm{L}}(0+)=i_{\mathrm{L}}(0-)=0$
