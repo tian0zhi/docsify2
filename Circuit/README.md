@@ -743,3 +743,41 @@ and $i_{\mathrm{L}}(0+)=i_{\mathrm{L}}(0-)=0$
 $A=-I_{S},i_{\mathrm{L}}=I_{S}-I_{S} e^{-\frac{R}{L} t}=I_{S}(1-e^{-\frac{R}{L} t})\qquad\qquad\qquad$
 
 由上式可知，电感电流$i_{\mathrm{L}}$变化的快慢由$\tau=\frac{L}{R}$决定，$\tau$越大，充电越慢，$\tau$越小，充电越快。
+
+### **7.3 一阶电路的全响应**
+
+当一个非零初始状态的一阶电路受到激励时，电路的响应称为一阶电路的全响应。
+<p align="center">
+        <img src="http://115.159.24.45:3000/Circuit/pic/Fig41.png" width="50%"/>
+</p>
+
+设电容原有电压${{\rm{u}}_c} = {U_0}$，开关S 闭合后，根据KVL有：
+$$R C \frac{d u_{c}}{d t}+u_{c}=U_{s}$$
+初始条件${u_c}({0_ + }) = {u_c}({0_ - }) = {U_0}$，方程的通解： ${u_c} = {u_c}^{'} + {u_c}^{''}$，达到稳态后的电压为特解：
+$$u_{c}^{'} = U_s$$
+$u_{c}^{''}$为上述微分方程对应的齐次方程的通解$${u''_C} = A{e^{ - \frac{t}{\tau }}}$$，其中$$\tau  = RC$$为电路的时间常数，所以有：$${u_C} = {U_S} + A{e^{\frac{{ - t}}{\tau }}}$$
+
+根据初始条件$${u_c}({0_ + }) = {u_c}({0_ - }) = {U_0}$$，得积分常数为$$A = {U_0} - {U_S}$$，所以电容电压
+$${u_C} = {U_S} + A{e^{\frac{{ - t}}{\tau }}} = {U_S} + ({U_0} - {U_S}){e^{ - \frac{t}{\tau }}}\quad \;t \geqslant 0$$
+
+**两种分解方式：**
+
+- 着眼于电路的两种工作状态
+全响应 = 强制分量(稳态解)+自由分量(暂态解)
+$${u_C} = {U_S} + A{e^{\frac{{ - t}}{\tau }}} = {U_S} + ({U_0} - {U_S}){e^{ - \frac{t}{\tau }}}\quad \;t \geqslant 0$$
+- 着眼于因果关系
+全响应 = 零状态响应 + 零输入响应
+$${u_C} = {U_S}(1 - {e^{ - \frac{t}{\tau }}}) + {U_0}{e^{ - \frac{t}{\tau }}}\quad \quad (t \geqslant 0)$$
+
+**三要素：**
+解的一般形式为：
+
+$f(t) = f(\infty ) + [f({0_ + }) - f(\infty )]{e^{ - \frac{t}{\tau }}}$，
+
+其中
+
+$$\text { 三要素 }\left\{\begin{array}{ll}
+f(\infty) & \text { 稳态解 } \\
+f\left(0_{+}\right) & \text {初始值 } \\
+\tau & \text { 时间常数 }
+\end{array}\right.$$
