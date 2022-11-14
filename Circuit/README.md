@@ -744,7 +744,7 @@ $A=-I_{S},i_{\mathrm{L}}=I_{S}-I_{S} e^{-\frac{R}{L} t}=I_{S}(1-e^{-\frac{R}{L} 
 
 由上式可知，电感电流$i_{\mathrm{L}}$变化的快慢由$\tau=\frac{L}{R}$决定，$\tau$越大，充电越慢，$\tau$越小，充电越快。
 
-### **7.3 一阶电路的全响应**
+### **7.4 一阶电路的全响应**
 
 当一个非零初始状态的一阶电路受到激励时，电路的响应称为一阶电路的全响应。
 <p align="center">
@@ -781,3 +781,76 @@ f(\infty) & \text { 稳态解 } \\
 f\left(0_{+}\right) & \text {初始值 } \\
 \tau & \text { 时间常数 }
 \end{array}\right.$$
+
+### **7.5 二阶电路的零输入响应**
+二阶微分方程描述的动态电路称为二阶电路。在二阶电路中，给定的初始条件应有两个，它们由储能元件的初始值决定。RLC串联电路和GLC并联电路是最简单的二阶电路。
+<p align="center">
+        <img src="http://115.159.24.45:3000/Circuit/pic/Fig42.png" width="50%"/>
+</p>
+
+上图所示为RLC串联电路，假设原电容已充电，其电压为$u_c=U_0$，电感的初始电流为$I_0$。$t=0$时，开关$S$闭合，此电路的放电过程即是二阶电路的零输入响应。在指定的电压电流参考方向下，根据KVL可得
+$$-u_c+u_R+u_L=0$$
+
+$i=-C\frac{du_C}{dt}$，电压$u_R=-RC\frac{du_C}{dt}$，$u_L=L\frac{di}{dt}=LC\frac{d^2u_C}{dt^2}$。代入上式得，
+
+$$LC\frac{d^2u_c}{dt^2}+RC\frac{du_C}{dt}+u_C = 0$$
+
+初始条件：$u_c(0_+)=U_0,i(0_+)=\frac{du_c}{dt}|_{t=0_\_}=0$
+
+依然假设$u_C=Ae^{pt}$，然后再确定其中的$p$和$A$。
+将$u_C=Ae^{pt}$代入上式得特征方程
+$$LCp^2+RCp+1 = 0$$
+特征根为
+$$p=-\frac{R}{2L}\pm \sqrt{(\frac{R}{2L})^2-\frac{1}{LC}}$$
+
+根据$$\bigtriangleup =R - 2\sqrt{\frac{L}{C}}$$的正负性，二阶电路的零输入响应可分为如下三种情况。
+
+- 过阻尼
+
+$R>2\sqrt{\frac{L}{C}}$，二阶微分方程的解为：
+$$u_C = A_1e^{p_1t}+A_2e^{p_2t}$$
+带入初始条件，可得：
+$$\left\{\begin{matrix}
+ A_1=\frac{P_2}{P_2-P_1}U_0&\\
+ A_2=\frac{-P_1}{P_2-P_1}U_0 & 
+\end{matrix}\right.
+$$
+即：
+电容电压
+$$u_c = \frac{U_0}{p_2-p_1}(P_2e^{P_1t}-P_1e^{P_2t})$$
+电流：
+$$i=-C\frac{du_C}{dt}=-\frac{U_0}{L(P_2-P_1)}(e^{P_1t}-e^{P_2t})$$
+电感电压：
+$$u_L = L\frac{di}{dt}=-\frac{U_0}{L(P_2-P_1)}(P_1e^{P_1t}-P_2e^{P_2t})$$
+
+
+<p align="center">
+        <img src="http://115.159.24.45:3000/Circuit/pic/Fig43.png" width="50%"/>
+</p>
+
+- 欠阻尼
+震荡收敛
+
+$R<2\sqrt{\frac{L}{C}}$，此时在特征根$P=-\frac{R}{2L}\pm \sqrt{(\frac{R}{2L})^2-\frac{1}{LC}}$中，令：$\delta  = \frac{R}{2L}$（衰减系数），$\omega_0 = \sqrt{\frac{1}{LC}}$（谐振角频率），$\omega = \sqrt{\omega_{0}^{2}-\delta^{2}}$（固有震荡角频率），则$P=-\delta \pm j\omega$
+
+二阶微分方程的解为：
+
+$$u_C = A_1e^{p_1t}+A_2e^{p_2t}= e^{-\delta t}(A_1e^{j\omega t}+A_2e^{j\omega t})\\
+=e^{-\delta t}sin(\omega t+ \beta )
+$$
+
+代入初始条件，
+$u_c = \frac{\omega_0}{\omega}U_0e^{\delta t}sin(\omega t +\beta) $，所以电容电压是振幅$\frac{\omega_0}{\omega}U_0$为包络线指数衰减的正弦函数。
+
+电流：
+$$i = -C\frac{du_c}{dt}=\frac{U_0}{\omega L}e^{\delta t}sin(\omega t)$$
+电感电压：
+$$
+u_L=L\frac{di}{dt}=-\frac{\omega_0}{\omega}U_0e^{-\omega t}sin(\omega t - \beta)
+$$
+
+临界阻尼：
+
+<p align="center">
+        <img src="http://115.159.24.45:3000/Circuit/pic/Fig44.png" width="50%"/>
+</p>
