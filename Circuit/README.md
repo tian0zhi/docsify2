@@ -14,6 +14,11 @@
         <img src="http://115.159.24.45:3000/Circuit/pic/Fig1.png" width="30%"/>
 </p>
 
+<script type="text/javascript">
+    var gloableUrl = "http://115.159.24.45:3000/";
+    document.write("222444rrrrrrrr");
+</script>
+
 
 > **建模注意事项：**<p></p>
 > &nbsp;&nbsp;&nbsp;&nbsp;模型选取恰当，对电路进行分析的结果就与实际情况接近；<p></p>&nbsp;&nbsp;&nbsp;&nbsp;模型选取不恰当，则会造成很大的误差甚至导致错误的结果。<p></p>&nbsp;&nbsp;&nbsp;&nbsp;如果模型取得太复杂则会造成分析困难，取得太简单则可能无法反应真实的物理现象。

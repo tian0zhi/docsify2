@@ -4,3 +4,4 @@
 - [Code 编程练习](Code/README.md) 
 - [Signal Deal 信号处理](signal_deal/README.md)
 - [Paper write 文章写作](Paper_write/README.md) 
+- [Record self 记录](Record_self/README.md) 
