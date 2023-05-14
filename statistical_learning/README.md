@@ -12,7 +12,7 @@
 
 
 <p align="center">
-        <img src="http://115.159.24.45:3000/statistical_learning/pic/Fig1.png" width="60%"/>
+        <img src="../statistical_learning/pic/Fig1.png" width="60%"/>
 </p>
 <p align="center">总体学习框架图</p>
 
@@ -49,7 +49,7 @@
 
 ### **1.2&nbsp;&nbsp;统计学习的分类**
 <p align="center">
-        <img src="http://115.159.24.45:3000/statistical_learning/pic/Fig2.png" width="90%"/>
+        <img src="../statistical_learning/pic/Fig2.png" width="90%"/>
 </p>
 <p align="center">统计学习的分类总体框架图</p>
 
@@ -78,7 +78,7 @@ $$T=\{(x_1,y_1),(x_1,y_1),(x_1,y_1),...,(x_N,y_N)\}$$
 
 监督学习利用训练数据集学习一个模型，再用模型对测试样本集进行预测。由于在这个过程中需要标注的训练数据集，而标注的训练数据集往往是人工给出的 ，所以称为监督学习。监督学习分为学习和预测两个过程，由学习系统与预测系统完成，可用下图表示。
 <p align="center">
-        <img src="http://115.159.24.45:3000/statistical_learning/pic/Fig3.png" width="40%"/>
+        <img src="../statistical_learning/pic/Fig3.png" width="40%"/>
 </p>
 
 监督学习分为学习和预测两个过程，由学习系统与预测系统完成。在学习过程中，学习系统利用给定的训练数据集，通过学习(或训练)得到一个模型，表示为条件概率分布$\hat{P}(Y|X)$或决策函数$Y=\hat{f}(X)$。条件概率分布$\hat{P}(Y|X)$或决策函数$Y=\hat{f}(X)$描述输入与输出随机变量之间的映射关系。在预测过程中，预测系统对于给定的测试样本集中的输入$x_{N+1}$由模型$y_{N+1}=argmax_y\hat{P}(y|x_{N+1})$或$y_{N+1}=\hat{f}(y|x_{N+1})$给出相应的输出$y_{N+1}$。
@@ -96,7 +96,7 @@ $$T=\{(x_1,y_1),(x_1,y_1),(x_1,y_1),...,(x_N,y_N)\}$$
 无监督学习可以用于对己有数据的分析，也可以用于对未来数据的预测。分析时使用学习得到的模型，即函数 $z = \hat g(x)$ 条件概率分布$\hat P(z|x)$或者条件概率分布 $\hat P(x|z)$ 。预测时，和监督学习有类似的流程。在学习过程中，学习系统从训练数据集学习，得到一个最优模型，表示为函数 $Z=\hat g(x)$ 条件概率分布$\hat P(z|x)$ 或者条件概率分布$\hat P(z|x)$ 。在预测过程中，预测系统对于给定的输入$ x_{N+l}$，由模型$Z_{N+l} = \hat g(X_{N+1})$或$ Z_{N+1} = argmax_z\hat P(z|x_{N+1})$ 给出相应的输出$z_{N+1}$进行聚类或降维，或者由模型$\hat P(x|z)$给出输入的概率$\hat P(x_{N+1}|z_{N+1})$进行概率估计。
 
 <p align="center">
-        <img src="http://115.159.24.45:3000/statistical_learning/pic/Fig4.png" width="50%"/>
+        <img src="../statistical_learning/pic/Fig4.png" width="50%"/>
 </p>
 
 3. **强化学习**
@@ -114,7 +114,7 @@ $$T=\{(x_1,y_1),(x_1,y_1),(x_1,y_1),...,(x_N,y_N)\}$$
 在监督学习中，概率模型取条件概率分布形式 $P(y|x)$，非概率模型取函数形式 $y=f(x)$ 其中$x$是输入，$y$是输出。在无监督学习中，概率模型取条件概率分布形式 $P(z|x)$或 $P(x|z)$，非概率模型取函数形式 $z = g(x)$，其中$x$是输入，$z$是输出。在监督学习中，概率模型是生成模型，非概率模型是判别模型。
 
 <p align="center">
-        <img src="http://115.159.24.45:3000/statistical_learning/pic/Fig5.png" width="50%"/>
+        <img src="../statistical_learning/pic/Fig5.png" width="50%"/>
 </p>
 
 条件概率分布$P(y|x)$和函数$y = f(x)$ 可以相互转化(条件概率分布$ P(z|x)$函数 $z = g(x)$ 同样可以) 。具体地，条件概率分布最大后得到函数，函数归一化后得到条件概率分布。
@@ -131,7 +131,7 @@ $$乘法规则: P(x,y)=P(y|x)P(x) $$
 统计学习模型，特别是非概率模型，可以分为线性模型(linear mode)和非线性模型 (non-linear model) 。如果函数 $f(x) = g(x)$或$z = g(x)$ 是线性函数，则称模型是线性模型，否则称模型是非线性模型。
 
 <p align="center">
-        <img src="http://115.159.24.45:3000/statistical_learning/pic/Fig6.png" width="50%"/>
+        <img src="../statistical_learning/pic/Fig6.png" width="50%"/>
 </p>
 
 3. **参数化模型与非参数化模型**
@@ -139,7 +139,7 @@ $$乘法规则: P(x,y)=P(y|x)P(x) $$
 统计学习模型又可以分为参数化模型 (parametric model)和非参数化模型 (nonparametric model)。参数化模型假设模型参数的维度固定，模型可以由有限维参数完全刻画:非参数化模型假设模型参数的维度不固定或者说无穷大，随着训练数据量的增加而不断增大。
 
 <p align="center">
-        <img src="http://115.159.24.45:3000/statistical_learning/pic/Fig7.png" width="50%"/>
+        <img src="../statistical_learning/pic/Fig7.png" width="50%"/>
 </p>
 
 
@@ -151,7 +151,7 @@ $$乘法规则: P(x,y)=P(y|x)P(x) $$
 
 学习和预测在一个系统，每次接受一个输入$x_t$，用己有模型给出预测$\hat f(x_t)$之后得到相应的反馈，即该输入对应的输出$y_t$；系统用损失函数计算两者的差异，更新模型；并不断重复以上操作。
 <p align="center">
-        <img src="http://115.159.24.45:3000/statistical_learning/pic/Fig8.png" width="60%"/>
+        <img src="../statistical_learning/pic/Fig8.png" width="60%"/>
 </p>
 
 在线学习通常比批量学习更难，很难学到预测准确率更高的模型，因为每次模型更新中，可利用的数据有限。
@@ -174,7 +174,7 @@ $$P(x|D)=\int P(x|\theta ,D)P(\theta |D)d\theta $$
 
 贝叶斯估计与极大似然估计在思想上有很大的不同，代表着统计学中频率学派和贝叶斯学派对统计的不同认识。其实，可以简单地把两者联系起来，假设先验分布是均匀分布，取后验概率最大，就能从贝叶斯估计得到极大似然估计。
 <p align="center">
-        <img src="http://115.159.24.45:3000/statistical_learning/pic/Fig9.png" width="60%"/>
+        <img src="../statistical_learning/pic/Fig9.png" width="60%"/>
 </p>
 
 2. **核方法**
@@ -427,7 +427,7 @@ $$sign(x)=\left\{\begin{matrix}
 \end{matrix}\right.$$
 
 <p align="center">
-        <img src="http://115.159.24.45:3000/statistical_learning/pic/Fig10.png" width="40%"/>
+        <img src="../statistical_learning/pic/Fig10.png" width="40%"/>
 </p>
 
 对应于特征空间 $\mathcal{R}^n$ 中的一个超平面$S$，其中$w$是超平面的法向量，$b$是超平面的截距。这个超平面将特征空间划分为两个部分。位于两部分的点(特征向量)分别被分为正、负两类。因此，超平面 称为分离超平面 (separating hyperplane)，如上图。
@@ -544,7 +544,7 @@ $$L_\infty(x_i,x_j)=max_l|x_i^{(l)}-x_j^{(l)}|$$
 
 
 <p align="center">
-        <img src="http://115.159.24.45:3000/statistical_learning/pic/Fig11.png" width="40%"/>
+        <img src="../statistical_learning/pic/Fig11.png" width="40%"/>
 </p>
 
 

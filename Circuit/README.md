@@ -11,14 +11,8 @@
 > 电路模型：用理想电路元件或它们的组合模拟实际器件就是建立其模型，简称建模。建模时必须考虑工作条件，并按不同准确度的要求把给定工作情况下的主要物理现象和功能反映出来。
 
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig1.png" width="30%"/>
+        <img src="../Circuit/pic/Fig1.png" width="30%"/>
 </p>
-
-<script type="text/javascript">
-    var gloableUrl = "http://115.159.24.45:3000/";
-    document.write("222444rrrrrrrr");
-</script>
-
 
 > **建模注意事项：**<p></p>
 > &nbsp;&nbsp;&nbsp;&nbsp;模型选取恰当，对电路进行分析的结果就与实际情况接近；<p></p>&nbsp;&nbsp;&nbsp;&nbsp;模型选取不恰当，则会造成很大的误差甚至导致错误的结果。<p></p>&nbsp;&nbsp;&nbsp;&nbsp;如果模型取得太复杂则会造成分析困难，取得太简单则可能无法反应真实的物理现象。
@@ -30,7 +24,7 @@
 > 非关联参考方向：电压、电流的参考方向不一致
 
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig2.png" width="40%"/>
+        <img src="../Circuit/pic/Fig2.png" width="40%"/>
 </p>
 <p align="center"> 关联参考方向（左）与非关联参考方向（右）</p>
 
@@ -53,14 +47,14 @@ $$R=\frac{1}{G}$$
 - 独立电压源与电流源
 > 独立电压源电压与外接电路无关，总保持给定等时间函数，电流大小由外电路决定。
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig3.png" width="30%"/>
+        <img src="../Circuit/pic/Fig3.png" width="30%"/>
 </p>
 <p align="center">独立电压源</p>
 
 $$u(t)=U_{s} (t)$$
 
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig4.png" width="70%"/>
+        <img src="../Circuit/pic/Fig4.png" width="70%"/>
 </p>
 <p align="center">电压源及其伏安特性</p>
 
@@ -69,7 +63,7 @@ $$u(t)=U_{s} (t)$$
 $$i(t)=i_{s}(t)$$
 
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig5.png" width="70%"/>
+        <img src="../Circuit/pic/Fig5.png" width="70%"/>
 </p>
 <p align="center">电流源及其伏安特性</p>
 
@@ -78,7 +72,7 @@ $$i(t)=i_{s}(t)$$
 > &nbsp;&nbsp;&nbsp;&nbsp;受控电压源的激励电压或受控电流源的激励电流与独立电压源的激励电压或独立电流源的激励电流有所不同,后者是独立量,前者则受电路中某部分电压或电流控制。
 
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig6.png" width="50%"/>
+        <img src="../Circuit/pic/Fig6.png" width="50%"/>
 </p>
 <p align="center">受控电压源与受控电流源</p>
 
@@ -101,7 +95,7 @@ $$\sum u=0$$
 > 等效电路：等效电路后等电路的任何电压和电流都将维持与原电路相同。这就是电路的“等效概念”。更一般地说，当电路中某一部分用其等效电路代替后，未被代替部分的电压和电流均应保持不变。也就是说，用等效电路的方法求解电路时，电压和电流保持不变的部分仅限于等效电路以外，这就是“对外等效”的概念。等效电路是被代替部分的简化或变形，内部并不等效。
 
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig7.png" width="50%"/>
+        <img src="../Circuit/pic/Fig7.png" width="50%"/>
 </p>
 <p align="center">（a）为原电路，（b）为等效电路</p>
 
@@ -112,7 +106,7 @@ $$\sum u=0$$
 - 电阻的串联
 
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig8.png" width="60%"/>
+        <img src="../Circuit/pic/Fig8.png" width="60%"/>
 </p>
 <p align="center">串联电阻的等效：（a）为原电路，（b）为等效电路</p>
 
@@ -121,7 +115,7 @@ $$R_{eq}=\sum_{i=1}^{n} R_{i}$$
 - 电阻的并联
 
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig9.png" width="60%"/>
+        <img src="../Circuit/pic/Fig9.png" width="60%"/>
 </p>
 <p align="center">并联电阻的等效：（a）为原电路，（b）为等效电路</p>
 
@@ -133,7 +127,7 @@ $$R_{eq}=\frac{1}{G_{eq}}=\frac{1}{\sum_{i=1}^{n} G_{i}}=\frac{1}{\sum_{i=1}^{n}
 > 桥形结构电路中电阻既不是串联也不是并联,因此无法根据电阻的串联、并联变换规律将电路结构加以变动。如果在该电路的任一支路中加入一个电压源就可得到图(b)所示电路，该电路又称为惠斯通电桥。
 
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig10.png" width="50%"/>
+        <img src="../Circuit/pic/Fig10.png" width="50%"/>
 </p>
 <p align="center">桥形结构电路</p>
 
@@ -143,7 +137,7 @@ $$R_{eq}=\frac{1}{G_{eq}}=\frac{1}{\sum_{i=1}^{n} G_{i}}=\frac{1}{\sum_{i=1}^{n}
 
 
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig11.png" width="50%"/>
+        <img src="../Circuit/pic/Fig11.png" width="50%"/>
 </p>
 
 <p align="center">左侧为Y形连接，右侧为三角形连接</p>
@@ -178,7 +172,7 @@ $$\bigtriangleup形电阻=\frac{Y形电阻两两乘积之和}{Y形不相邻电�
 &nbsp;&nbsp;&nbsp;&nbsp;下图(a)为n个电压源的串联，可以用一个电压源等效替代如图(b)所示，
 
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig12.png" width="40%"/>
+        <img src="../Circuit/pic/Fig12.png" width="40%"/>
 </p>
 
 <p align="center">串联电压源与它的等效</p>
@@ -193,7 +187,7 @@ $$u_{s}=u_{s1}+u_{s2}+...+u_{sn}=\sum_{k=1}^{n}u_{sk} $$
 &nbsp;&nbsp;&nbsp;&nbsp;下图(a)所示为n个电流源的并联,可以用一个电流源等效替代如图(b)所示，
 
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig13.png" width="60%"/>
+        <img src="../Circuit/pic/Fig13.png" width="60%"/>
 </p>
 
 <p align="center">并联电流源与它的等效</p>
@@ -208,7 +202,7 @@ $$i_{s}=i_{s1}+i_{s2}+...+i_{sn}=\sum_{k=1}^{n}i_{sk} $$
 - 实际电源特性
 
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig14.png" width="60%"/>
+        <img src="../Circuit/pic/Fig14.png" width="60%"/>
 </p>
 
 对于实际电源（如电池）：输出电压$u$随电流$i$的增大而减少——上图(a)；电流$i$不可超过一定的限制值，否则会损坏电源。不过在一段范围内电压和电流的关系近似为直线，如果把这一段直线加以延长而作为该电源的外特性，如上图(c)所示。
@@ -218,7 +212,7 @@ $$i_{s}=i_{s1}+i_{s2}+...+i_{sn}=\sum_{k=1}^{n}i_{sk} $$
 
 
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig15.png" width="60%"/>
+        <img src="../Circuit/pic/Fig15.png" width="60%"/>
 </p>
 实际电压源：考虑内阻影响，实际电压源可以等效为理想电压源与内阻的串联[上图(a)]；
 
@@ -227,7 +221,7 @@ $$i_{s}=i_{s1}+i_{s2}+...+i_{sn}=\sum_{k=1}^{n}i_{sk} $$
 > 电压源串联电阻的形式可以与电流源并联电阻的形式相互转换
 
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig16.png" width="60%"/>
+        <img src="../Circuit/pic/Fig16.png" width="60%"/>
 </p>
 
 （a）->（b）为例，6V电压源串联2欧姆电阻等效替换成了3A电流源并联2欧姆电阻。如果6V电压源串联2欧姆电阻，这个电路外接电阻为0，则有最大电流3A；换成3A电流源并联2欧姆电阻，外接无限大电阻，测得外接电阻电压为6V。
@@ -242,7 +236,7 @@ $$R_{i}=u/i$$
 
 **For example：**
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig17.png" width="60%"/>
+        <img src="../Circuit/pic/Fig17.png" width="60%"/>
 </p>
 
 由图（a）可以等效为图（b），
@@ -260,7 +254,7 @@ $$R=\frac{R_1R_3+(1-\alpha)R_1R_2}{R_1+R_2+R_3}$$
 > 图论的研究对象是“图”。图是由点和连接这些点的边构成的。如果把电路图中各支路的内容忽略不计，代之以线段，电路图就成为它的“图”。因此，在电路分析中，用图论的研充方法来讨论电路的连接性质是十分有效的。
 
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig18.png" width="40%"/>
+        <img src="../Circuit/pic/Fig18.png" width="40%"/>
 </p>
 <p align="center"> 电路的图 </p>
 
@@ -271,7 +265,7 @@ $$R=\frac{R_1R_3+(1-\alpha)R_1R_2}{R_1+R_2+R_3}$$
 
 给出一个电路的图，它的结点和支路都已分别编号，并给出了支路的方向，该方向也即支路电流和与之关联的支路电压的参考方向。
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig19.png" width="25%"/>
+        <img src="../Circuit/pic/Fig19.png" width="25%"/>
 </p>
 <p align="center"> 电路图 </p>
 
@@ -284,12 +278,12 @@ $$i_3+i_5-i_4=0$$
 
 讨论关于KVL独立方程数时要用到独立回路的概念，回路和独立回路的概念与支路的方向无关。一个图的回路数很多，如何确定它的一组独立回路有时不太容易。利用“树”的概念有助于寻找一个图的独立回路组，从而得到独立的KVL方程组。连通图$G$的树$T$定义为：包含图$G$的全部结点且不包含任何回路的连通子图。
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig20.png" width="70%"/>
+        <img src="../Circuit/pic/Fig20.png" width="70%"/>
 </p>
 
 上图中（a）（b）（c）是左图的树，（d）（e）不是。（d）中存在回路，（e）未包含所有的结点。对一个具有$b$条支路和$n$个结点的电路，连支数$l=b-n+1$，这也就是一个图的独立回路的数目。选择不同的树，就可以得到不同的基本回路组。以下图为例子，
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig21.png" width="70%"/>
+        <img src="../Circuit/pic/Fig21.png" width="70%"/>
 </p>
 左图为连通图$G$，中图为$G$的一个树，右图根据树得到独立回路，所以KVL方程组这样得出：
 
@@ -306,7 +300,7 @@ $$-u_4-u_5+u_6=0$$
 
 以下图为例解释该方法，
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig22.png" width="50%"/>
+        <img src="../Circuit/pic/Fig22.png" width="50%"/>
 </p>
 
 图（c）图（d）为电压源串联电阻与电流源并联电阻，两者可以相互转换，一般将电流源并联电阻的形式转换成电压源串联电阻的形式，方便计算。
@@ -348,7 +342,7 @@ $$-R_2i_2-R_4i_4+R_6i_6=0$$
 > 网孔的定义：对平面电路，其内部不含任何支路的回路称网孔。如下图左所示有2个网孔。
 
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig23.png" width="40%"/>
+        <img src="../Circuit/pic/Fig23.png" width="40%"/>
 </p>
 
 在网孔电流法中，以网孔电流作为电路的独立变量，它仅适用于平面电路。
@@ -389,7 +383,7 @@ $$R_{21}i_{m1}+R_{22}i_{m2}=u_{s2}-u_{s3}$$
 网孔电流法仅适用于平面电路，回路电流法则无此限制，它适用于平面或非平面电路。回路电流法是一种适用性较强并获得广泛应用的分析方法网孔电流是在网孔中连续流动的假想电流，对于一个具有b个支路，n个结点的电路，b个支路电流受(n-1)个KCL独立方程所制约，因此，独立的支路电流只有(b-n+1)个，等于网孔电流数。回路电流也是在回路中连续流动的假想电流。但是与网孔不同，回路的取法很多，选取的回路应是一组独立回路，且回路的个数(也即回路电流的个数)也应等于(b-n+1)个。选定一树以后形成的基本回路。显然满足上述要求。这就是说，基本回路电流可以作为电路的独立变量来求解。
 
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig24.png" width="40%"/>
+        <img src="../Circuit/pic/Fig24.png" width="40%"/>
 </p>
 
 以上 图为例，如果选支路(4,5,6)为树，可以得到以支路(1,2,3)为单连支的3个基本回路，它们是独立回路。把连支电流$i_1$、$i_2$与$i_3$分别作为在各自单连支回路中流动的假想回路电流$i_{11}$、$i_{12}$与$i_{13}$。支路4为回路1和2所共有，而其方向与回路1的绕行方向相反，与回路2的绕行方向相同，所以有：
@@ -406,7 +400,7 @@ $$i_6=-i_{11}+i_{12}-i_{13}$$
 
 在电路中任意选择某一结点为参考结点，其他结点为独立结点，这些结点与此参考结点之间的电压称为结点电压，结点电压的参考极性是以参考结点为负其余独立结点为正。由于任一支路都连接在两个结点上，根据KVL不难断定支路电压就是两个结点电压之差。如果每一个支路电流都可由支路电压来表示，那么它一定也可以用结点电压来表示。在具有n个结点的电路中写出其中(n-1)个独立结点的KCL方程，就得到变量为(n-1)个结点电压的共(n-1)个独立方程，称为结点电压方程，最后由这些方程解出结点电压，从而求出所結的电压、电流。这就是结点电压法。
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig25.png" width="40%"/>
+        <img src="../Circuit/pic/Fig25.png" width="40%"/>
 </p>
 
 以节点0为参考节点，节点1、2、3的电压用$u_{n1}$、$u_{n2}$、$u_{n3}$表示。则支路电压可以用节点电压来表示。
@@ -434,17 +428,17 @@ $$(\frac{u_{n3}-u_{s3}}{R_3})+(\frac{u_{n2}-u_{n3}}{R_5})+(\frac{u_{n1}-u_{n3}}{
 
 > 1.增加无伴电压源电流变量
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig26.png" width="60%"/>
+        <img src="../Circuit/pic/Fig26.png" width="60%"/>
 </p>
 
 > 2.合理选择参考节点
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig27.png" width="60%"/>
+        <img src="../Circuit/pic/Fig27.png" width="60%"/>
 </p>
 
 > 3.设置广义节点
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig28.png" width="60%"/>
+        <img src="../Circuit/pic/Fig28.png" width="60%"/>
 </p>
 
 
@@ -468,7 +462,7 @@ $$(\frac{u_{n3}-u_{s3}}{R_3})+(\frac{u_{n2}-u_{n3}}{R_5})+(\frac{u_{n1}-u_{n3}}{
 > 当一个电源独立作用时，其余电源不作用，即置零。（电压源视作短路，电流源视作开路）各支路电压和电流均可看成各独立源单独作用时，产生的电压和电流的叠加。
 
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig29.png" width="40%"/>
+        <img src="../Circuit/pic/Fig29.png" width="40%"/>
 </p>
 
 - 将独立电流源置零，视作开路，如上图（b）：
@@ -494,7 +488,7 @@ $$u_1=u_1^{'}+u_1^{''}=\frac{R_1u_s}{R_1+R_2}-\frac{R_1R_2i_s}{R_1+R_2}$$
 > 任意一个电路，其中第$k$条支路电压为$u_k$、电流为$i_k$，那该支路可以用一个电压等于$u_k$的独立电压源，或用一个电流等于$i_k$的独立电流源来替代，替代后电路中全部电压和电流均保持原有值。
 
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig30.png" width="50%"/>
+        <img src="../Circuit/pic/Fig30.png" width="50%"/>
 </p>
 
 ### **4.3 戴维宁定理和诺顿定理**
@@ -510,7 +504,7 @@ $$u_1=u_1^{'}+u_1^{''}=\frac{R_1u_s}{R_1+R_2}-\frac{R_1R_2i_s}{R_1+R_2}$$
 区别：不同点在于戴维宁定理需要确定开路电压和等效电阻，而诺顿定理需要确定短路电流和等效电阻。
 
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig31.png" width="50%"/>
+        <img src="../Circuit/pic/Fig31.png" width="50%"/>
 </p>
 
 等效电阻求法：
@@ -539,7 +533,7 @@ $$=>I_s = 4A$$
 另一类型的问题则着重于传输效率的大小问题，例如在通信系统和测量系统中，首要问题是如何从给定的信号源（产生通信信号或测量信号的“源”）取得尽可能大的信号功率。
 
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig32.png" width="60%"/>
+        <img src="../Circuit/pic/Fig32.png" width="60%"/>
 </p>
 
 $$P_L = I_L^{2}R_L=(\frac{U_{oc}}{R_{eq}+R_L})R_L$$
@@ -560,7 +554,7 @@ $$P_{max} = \frac{U_{oc}^2}{4R_{eq}}$$
 电容元件的元件特性是电路物理量电荷$q$与电压$u$的代数关系。线性电容元件的图形符号如下图所示，当电压参考极性与极板储存电荷的极性致时，线性电容元件的元件特性为
 $$q=Cu$$
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig33.png" width="40%"/>
+        <img src="../Circuit/pic/Fig33.png" width="40%"/>
 </p>
 
 如果电容元件的电流$i$和电压$u$取关联参考方向，如上图(a)所示，则得到电容元件的电压电流关系(VCR)为
@@ -588,7 +582,7 @@ $$W_c(t)=\frac{1}{2}Cu^2(t)$$
 在工程中广泛应用导线绕制的线圈，例如，在电子电路中常用的空心或带有铁心的高频线圈，电磁铁或变压器中含有在铁心上绕制的线图等。当一个线圈通以电流后产生的磁场随时间变化时，在线圈中就产生感应电压。
 
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig34.png" width="40%"/>
+        <img src="../Circuit/pic/Fig34.png" width="40%"/>
 </p>
 
 上图表示一个线圈，其中的电流$i$产生的磁通$\Phi_L$与$N$匝线圈交链，则磁通链$\Psi_L=N\cdot\Phi_L$。由于磁通$\Phi_L$和磁通链$\Psi_L$都是由线圏本身的电流$i$产生的，所以称为自感磁通和自感磁通。$\Phi_L$和$\Psi_L$的方向与$i$的参考方向成右手螺旋关系，如上图所示。当磁通链$\Psi_L$随时间变化时，在线圈的端子间产生感应电压。如果感应电压$u$的参考方向与$\Psi_L$成右手螺旋关系(即从端子$A$沿导线到端子$B$的方向与$\Psi_L$成右手螺旋关系)，则很据电磁感应定律，有
@@ -600,7 +594,7 @@ $$\Psi_L = Li$$
 其中$L$为电感元件的参数。
 
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig35.png" width="40%"/>
+        <img src="../Circuit/pic/Fig35.png" width="40%"/>
 </p>
 
 电感元件的电压电流关系
@@ -647,7 +641,7 @@ $$u=L\frac{di}{dt}$$
 ### **7.2 一阶电路的零输入响应**
 动态电路中无外施激励电源，仅由动态元件初始储能所产生的响应，称为动态电路的零输入响应。
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig36.png" width="50%"/>
+        <img src="../Circuit/pic/Fig36.png" width="50%"/>
 </p>
 
 以RC电路的零输入响应为例。电容C已充电，电压为 $U_c=U_0$。开关闭合后，电容存储的能量将通过电阻以热能的形式释放出来，现把开关动作时刻取为计时起点$(t=0)$。开关闭合后即$t≥0_+$，时，根据KVL可得，
@@ -676,7 +670,7 @@ $$
 
 同理，对于RL电路
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig37.png" width="50%"/>
+        <img src="../Circuit/pic/Fig37.png" width="50%"/>
 </p>
 
 初始电流为$I_0,\tau = \frac{L}{R}$，有
@@ -687,7 +681,7 @@ $$U_R = RI_0e^{-\frac{t}{\tau}}$$
 零状态响应就是电路在零初始状态下(动态元件初始储能为零)由外施激励引起的响应。
 - 对于RC电路
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig38.png" width="50%"/>
+        <img src="../Circuit/pic/Fig38.png" width="50%"/>
 </p>
 
 如上图所示RC串联电路，开关S闭合前电路处于零初始状态，即$u_c(0)=0$在t=0时刻，开关S闭合，电路接入直流电压源$u_s$。根据KVL，有
@@ -721,11 +715,11 @@ $$i=C \frac{\mathrm{d} u_{\mathrm{C}}}{\mathrm{d} t}=\frac{U_{\mathrm{s}}}{R} e^
 
 $u_c与i$的变化图如下所示，电流会有跃变。
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig39.png" width="40%"/>
+        <img src="../Circuit/pic/Fig39.png" width="40%"/>
 </p>
 - 对于RL电路
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig40.png" width="50%"/>
+        <img src="../Circuit/pic/Fig40.png" width="50%"/>
 </p>
 
 电路为零状态响应，开关打开前，电感电流为零。开关打开后
@@ -753,7 +747,7 @@ $A=-I_{S},i_{\mathrm{L}}=I_{S}-I_{S} e^{-\frac{R}{L} t}=I_{S}(1-e^{-\frac{R}{L} 
 
 当一个非零初始状态的一阶电路受到激励时，电路的响应称为一阶电路的全响应。
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig41.png" width="50%"/>
+        <img src="../Circuit/pic/Fig41.png" width="50%"/>
 </p>
 
 设电容原有电压${{\rm{u}}_c} = {U_0}$，开关S 闭合后，根据KVL有：
@@ -790,7 +784,7 @@ f\left(0_{+}\right) & \text {初始值 } \\
 ### **7.5 二阶电路的零输入响应**
 二阶微分方程描述的动态电路称为二阶电路。在二阶电路中，给定的初始条件应有两个，它们由储能元件的初始值决定。RLC串联电路和GLC并联电路是最简单的二阶电路。
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig42.png" width="50%"/>
+        <img src="../Circuit/pic/Fig42.png" width="50%"/>
 </p>
 
 上图所示为RLC串联电路，假设原电容已充电，其电压为$u_c=U_0$，电感的初始电流为$I_0$。$t=0$时，开关$S$闭合，此电路的放电过程即是二阶电路的零输入响应。在指定的电压电流参考方向下，根据KVL可得
@@ -830,7 +824,7 @@ $$u_L = L\frac{di}{dt}=-\frac{U_0}{L(P_2-P_1)}(P_1e^{P_1t}-P_2e^{P_2t})$$
 
 
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig43.png" width="50%"/>
+        <img src="../Circuit/pic/Fig43.png" width="50%"/>
 </p>
 
 - 欠阻尼
@@ -857,7 +851,7 @@ $$
 临界阻尼：
 
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig44.png" width="50%"/>
+        <img src="../Circuit/pic/Fig44.png" width="50%"/>
 </p>
 
 
@@ -872,7 +866,7 @@ $$
 全响应是零输入响应和零状态响应的叠加，可以通过求解二阶非齐次方程的方法求得全响应。
 
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig45.png" width="50%"/>
+        <img src="../Circuit/pic/Fig45.png" width="50%"/>
 </p>
 
 上图为GCL并联电路（G为电导），初始状态$u_c(0_\_)=0,i_L(0_\_)=0$，t=0时，开关$S$打开。根据$KVL$有，
@@ -891,7 +885,7 @@ $$\varepsilon (t)=\left\{\begin{matrix}
 \end{matrix}\right.$$
 
 <p align="center">
-        <img src="http://115.159.24.45:3000/Circuit/pic/Fig46.png" width="50%"/>
+        <img src="../Circuit/pic/Fig46.png" width="50%"/>
 </p>
 
 单位阶跃函数可用来开关动作，所以有时也称为开关函数。
