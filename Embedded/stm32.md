@@ -156,6 +156,7 @@ volatile unsigned int * GPIOF_ODR   =  (volatile unsigned int *)(0x40021400 + 0x
 ```
 初始化一下并循环检查，
 ```clike
+unsigned int mask = 1;
 *GPIOF_ODR &= ~(3<<8);// set GPIO F out_data_re
 while (1)
 {
@@ -173,3 +174,13 @@ while (1)
 }
 ```
 实现了按下按键蜂鸣器响且LED灯灭。
+
+### **1.5&nbsp;&nbsp;在嵌入式中一般性的定义**
+数据类型，
+```clike
+typedef unsigned char u_int8;//一字节，8位无符号整数
+typedef unsigned short int u_int16;//两字节，16位无符号整数
+typedef unsigned int u_int32;//四字节，32位无符号整数
+typedef unsigned long int u_int32;//四字节，32位无符号整数
+typedef unsigned long long int u_int64;//八字节，64位无符号整数
+```
