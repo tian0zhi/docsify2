@@ -116,3 +116,60 @@ u_int8 b = 3;//0000 0011
 <p align="center">
         <img src="../Embedded/pic_stm32/pic10.png" width="100%"/>
 </p>
+
+### **1.4&nbsp;&nbsp;按键控制蜂鸣器demo**
+
+<p align="center">
+        <img src="../Embedded/pic_stm32/pic11.png" width="30%"/>
+        <br>
+       按键连接
+</p>
+
+<p align="center">
+        <img src="../Embedded/pic_stm32/pic12.png" width="80%"/>
+        <br>
+       对应GPIO_A0
+</p>
+
+因此，要配置GPIO A与F的寄存器。
+全局定义：
+```clike
+volatile unsigned int * RCC_AHB1ENR =  (volatile unsigned int *)(0x40023800 + 0x30);
+volatile unsigned int * GPIOA_MODER =  (volatile unsigned int *)(0x40020000 + 0x00);
+volatile unsigned int * GPIOA_PUPDR =  (volatile unsigned int *)(0x40020000 + 0x0C);
+volatile unsigned int * GPIOA_IDR =    (volatile unsigned int *)(0x40020000 + 0x10);
+volatile unsigned int * GPIOF_MODER =  (volatile unsigned int *)(0x40021400 + 0x00);
+volatile unsigned int * GPIOF_ODR   =  (volatile unsigned int *)(0x40021400 + 0x14);
+```
+首先，使能所在总线上的时钟，
+```clike
+*RCC_AHB1ENR |= 1<<5;//GPIO F on AHB1
+*RCC_AHB1ENR |= 1;//GPIO A on AHB1
+```
+配置工作模式及上下拉电阻，
+```clike
+*GPIOA_MODER &= ~(3);//set GPIO A0 in
+*GPIOA_PUPDR &= ~(3);//clear default R
+*GPIOA_PUPDR |= ~(1);//set down R
+*GPIOF_MODER &= ~(15<<(2*8));//clear GPIO F moder
+*GPIOF_MODER |= 5<<(2*8);//set GPIO F moder
+```
+初始化一下并循环检查，
+```clike
+*GPIOF_ODR &= ~(3<<8);// set GPIO F out_data_re
+while (1)
+{
+    /* USER CODE END WHILE */
+    HAL_Delay(100);
+    if((*GPIOA_IDR & mask) == mask)
+    {
+        *GPIOF_ODR |= (3<<8);
+    }
+    else
+    {
+        *GPIOF_ODR &= ~(3<<8);
+    }
+    /* USER CODE BEGIN 3 */
+}
+```
+实现了按下按键蜂鸣器响且LED灯灭。
