@@ -184,3 +184,322 @@ typedef unsigned int u_int32;//四字节，32位无符号整数
 typedef unsigned long int u_int32;//四字节，32位无符号整数
 typedef unsigned long long int u_int64;//八字节，64位无符号整数
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## **附录:嵌入式学习常见缩写**
+
+### **常规：**
+
+ARM：Advanced RISC Machine
+
+AAPCS：ARM Architecture Process call standard ARM体系结构过程调用标准
+
+RISC： Reduced Instruction Set Computer 精简指令集计算机
+
+RTOS：Real Time Operating System 实时操作系统
+
+DMA：Direct Memory Access 存储器直接访问
+
+EXTI: External Interrupts 外部中断
+
+FSMC: Flexible static memory controller 可变静态存储控制器
+
+FPB：flash patch and breakpoint FLASH 转换及断电单元
+
+HSE：Hign speed external
+
+HSI: High speed internal
+
+LSE: Low Speed external
+
+LSI: Low Speed Internal
+
+LSU: load store unit 存取单元
+
+PFU: prefetch unit 预取单元
+
+DPU：Dataflow Processing Unit，数据流处理单元
+
+FPU：Floating Processing Unit，浮点计算单元
+
+ISR：Interrupt Service Routines，中断服务程序
+
+NMI：Nonmaskable Interrupt，不可屏蔽中断
+
+NVIC：Nested Vectored Interrupt Controller，嵌套向量中断控制器
+
+MPU：Memory Protection Unit，内存保护单元
+
+MMU：Memory Management Unit，内存管理单元
+
+MIPS:million instructions per second 每秒能执行的百万条指令的条数
+
+RCC：Reset and clock control 复位和时钟控制
+
+RTC: Real-Time Clock 实时时钟
+
+IWDG: independent watchdog 独立看门狗
+
+WWDG：Window watchdog 窗口看门狗
+
+TIM：timer 定时器
+
+GAL：generic array logic 通用阵列逻辑
+
+PAL：programmable array logic 可编程阵列逻辑
+
+ASIC：Application Specific Integrated Circuit 专用集成电路
+
+FPGA：Field－Programmable Gate Array 现场可编程门阵列
+
+CPLD：Complex Programmable Logic Device 可编程逻辑器件
+
+IAP：即 in-application programming，IAP is the ability to re-program the Flash memory of a microcontroller while the user program is running.
+
+ICP：即 in-circuit programming，ICP is the ability to program the Flash memory of a microcontroller using the JTAG protocol, the SWD protocol or the bootloader while the device is mounted on the user application board.
+
+Option bytes：product configuration bits stored in the Flash memory.
+
+ITCM：Instruction Tighly Coupled Memory.
+
+DTCM：Data Tighly Coupled Memory.
+
+### **端口：**
+
+AFIO：alternate function IO 复用IO端口
+
+GPIO：general purpose input/output 通用IO端口
+
+IOP（A-G）:IO port A - IO port G (例如：IOPA:IO port A)
+
+CAN：Controller area network 控制器局域网
+
+FLITF：The Flash memory interface 闪存存储器接口
+
+I2C： Inter-integrated circuit 微集成电路
+
+IIS： integrate interface of sound 集成音频接口
+
+JTAG：joint test action group 联合测试行动小组
+
+SPI：Serial Peripheral Interface 串行外围设备接口
+
+SDIO: SD I/O
+
+UART: Universal Synchr./Asynch. Receiver Transmitter 通用同步/异步接收/发送装置
+
+USB: Universal Serial Bus 通用串行总线
+
+### **寄存器相关：**
+
+CPSP： Current Program Status Register 当c前程序状态寄存器
+
+SPSP： saved program status register 程序状态备份寄存器
+
+CSR：clock control/status register 时钟控制状态寄存器
+
+LR： link register 链接寄存器
+
+SP： stack pointer 堆栈指针
+
+MSP: main stack pointer 主堆栈指针
+
+PSP：process stack pointer 进程堆栈指针
+
+PC： program counter 程序计数器
+
+### **调试相关：**
+
+ICE：in circuit emulator 在线仿真
+
+ICE Breaker 嵌入式在线仿真单元
+
+DBG：debug 调试
+
+IDE：integrated development environment 集成开发环境
+
+DWT: data watchpoint and trace 数据观测与跟踪单元
+
+ITM: instrumentation trace macrocell测量跟踪单元
+
+ETM： embedded trace macrocell嵌入式追踪宏单元
+
+TPIU：trace port interface unit 跟踪端口接口单元
+
+TAP： test access port 测试访问端口
+
+DAP: debug access prot调试访问端口
+
+TP: trace port 跟踪端口
+
+DP：debug port 调试端口
+
+SWJ-DP: serial wire JTAG debug port 串行-JTAG 调试接口
+
+SW-DP: serial wire debug port 串行调试接口
+
+JTAG-DP：JTAG debug port JTAG 调试接口
+
+### **系统类：**
+
+IRQ： interrupt request 中断请求
+
+FIQ： fast interrupt request 快速中断请求
+
+SW：software 软件
+
+SWI： software interrupt 软中断
+
+RO:read only 只读（部分）
+
+RW:read write 读写（部分）
+
+ZI:zero initial 零初始化（部分）
+
+BSS：Block Started by Symbol 以符号开始的块（未初始化数据段）
+
+### **总线：**
+
+Bus Matrix 总线矩阵
+
+Bus Splitter 总线分割
+
+AHB-AP：advanced High-preformance Bus-access port
+
+APB:advanced peripheral busAPB1: low speed APB
+
+APB2: high speed APB
+
+PPB： Private Peripheral Bus 专用外设总线
+
+AHB：advanced high-performance bus.
+
+AHBS：AHB Slave bus.
+
+AXIM：AXI master bus.
+
+### **杂类：**
+ALU：Arithmetic Logical Unit，算术逻辑单元
+
+CLZ： count leading zero，前导零计数（指令）
+
+SIMD： single instruction stream multiple data stream，单指令流，多数据流
+
+VFP： vector floating point，矢量浮点运算
+
+DFU：Device Firmware Upgrade，设备固件升级
+
+ICU：Instruction Cache Unit，指令缓冲存储单元
+
+DCU：Data Cache Unit，数据缓冲存储单元
+
+### **词汇/词组：**
+
+Big Endian 大端存储模式
+
+Little Endian 小端存储模式
+
+context switch 任务切换（上下文切换）（CPU寄存器内容的切换）
+
+task switch 任务切换
+
+literal pool 数据缓冲池
+
+### **词汇类/单词：**
+
+arbitration 仲裁
+
+access 访问
+
+assembler 汇编器
+
+disassembly 反汇编
+
+binutils连接器
+
+bit-banding 位段（技术）
+
+bit-band alias 位段别名
+
+bit-band region 位段区域
+
+banked 分组
+
+buffer 缓存
+
+ceramic 陶瓷
+
+fetch 取指
+
+decode 译码
+
+execute 执行
+
+Harvard 哈佛（架构）
+
+handler 处理者，句柄
+
+heap 堆
+
+stack 栈
+
+latency 延时
+
+load (LDR) 加载（存储器内容加载到寄存器Rn）
+
+store (STR) 存储（寄存器Rn内容存储到存储器）
+
+Loader 装载器
+
+optimization 优化
+
+process 进程/过程
+
+thread 线程
+
+prescaler预分频器
+
+prefetch预读/预取指
+
+perform 执行
+
+pre-emption 抢占
+
+tail-chaining 尾链
+
+late-arriving 迟到
+
+resonator 共振器
+
+### **指令相关：**
+
+instructions 指令
+
+pseudo-instruction 伪指令
+
+directive 伪操作
+
+comments 注释
+
+FA full ascending 满栈递增（方式）
+
+EA empty ascending 空栈递增（方式）
+
+FD full desending满栈递减（方式）
+
+ED empty desending空栈递减（方式）
