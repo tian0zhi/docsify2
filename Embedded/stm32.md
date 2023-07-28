@@ -23,7 +23,7 @@
 </p>
 
 
-```javascript
+```c
 /*
 #define RCC_AHB1ENR (volatile unsigned int *)(0x40023800 + 0x30)
 #define GPIOF_MODER (volatile unsigned int *)(0x40021400 + 0x00)
@@ -83,7 +83,7 @@ int main()
 - \>> : 右移
 
 运算代码：
-```javascript
+```c
 // 变量声明
 u_int8 a = 1;//0000 0001
 u_int8 b = 3;//0000 0011
@@ -133,7 +133,7 @@ u_int8 b = 3;//0000 0011
 
 因此，要配置GPIO A与F的寄存器。
 全局定义：
-```javascript
+```c
 volatile unsigned int * RCC_AHB1ENR =  (volatile unsigned int *)(0x40023800 + 0x30);
 volatile unsigned int * GPIOA_MODER =  (volatile unsigned int *)(0x40020000 + 0x00);
 volatile unsigned int * GPIOA_PUPDR =  (volatile unsigned int *)(0x40020000 + 0x0C);
@@ -142,12 +142,12 @@ volatile unsigned int * GPIOF_MODER =  (volatile unsigned int *)(0x40021400 + 0x
 volatile unsigned int * GPIOF_ODR   =  (volatile unsigned int *)(0x40021400 + 0x14);
 ```
 首先，使能所在总线上的时钟，
-```javascript
+```c
 *RCC_AHB1ENR |= 1<<5;//GPIO F on AHB1
 *RCC_AHB1ENR |= 1;//GPIO A on AHB1
 ```
 配置工作模式及上下拉电阻，
-```javascript
+```c
 *GPIOA_MODER &= ~(3);//set GPIO A0 in
 *GPIOA_PUPDR &= ~(3);//clear default R
 *GPIOA_PUPDR |= ~(1);//set down R
@@ -155,7 +155,7 @@ volatile unsigned int * GPIOF_ODR   =  (volatile unsigned int *)(0x40021400 + 0x
 *GPIOF_MODER |= 5<<(2*8);//set GPIO F moder
 ```
 初始化一下并循环检查，
-```javascript
+```c
 unsigned int mask = 1;
 *GPIOF_ODR &= ~(3<<8);// set GPIO F out_data_re
 while (1)
@@ -177,7 +177,7 @@ while (1)
 
 ### **1.5&nbsp;&nbsp;在嵌入式中一般性的定义**
 数据类型，
-```javascript
+```c
 typedef unsigned char u_int8;//一字节，8位无符号整数
 typedef unsigned short int u_int16;//两字节，16位无符号整数
 typedef unsigned int u_int32;//四字节，32位无符号整数
