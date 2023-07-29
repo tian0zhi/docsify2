@@ -461,10 +461,15 @@ master_ns= (uint8_t)(~ port) >> 0x4;
 
 &nbsp;&nbsp;&nbsp;&nbsp;说明：使用未初始化的变量可能导致程序逻辑错误和未定义行为。需要在使用变量之前对其进行初始化。
 
+<!-- tabs:start -->
+
+#### **越界与未初始化**
+
 ```c
 #include <stdio.h>
 
-int main() {
+int main() 
+{
     int arr[5];
     int *ptr = arr;
     
@@ -481,6 +486,20 @@ int main() {
     return 0;
 }
 ```
+#### **越界与未初始化2**
+
+```c
+int main() 
+{
+    int arr[5];
+    arr[-1] = 10;
+    return 0;
+}
+```
+
+![](./pic/fig18.png )
+
+<!-- tabs:end -->
 
 ### 4.传值 or 传指针
 
