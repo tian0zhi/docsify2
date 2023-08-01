@@ -1,3 +1,3 @@
-- [Tool 编译工具](Code/Tool/README.md) 
+- [Tool 编译工具](./Tool/README.md) 
 
-- [C C语言](Code/C/README.md) 
+- [C C语言](./C/README.md) 

@@ -140,7 +140,7 @@ int b_variable = 100;
 
 为了避免每次都输入许多命令，Makefile(make)出现了。
 
-#### ** Makefile  **
+**Makefile**
 
 ```makefile
 # 定义编译器
@@ -188,7 +188,7 @@ clean:
 
 
 
-#### ** CMakeLists.txt  **
+**CMakeLists.txt**
 
 ```c
 cmake_minimum_required(VERSION 3.10)
@@ -375,7 +375,7 @@ float sig_f[1000] = {0.};
 int main()
 {
     int i = 0;
-    int *p_sig_int = sig_f;
+    int *p_sig_int = (int *)sig_f;
     for(;i<1000;++i)
     {
         p_sig_int[i] = (int)sig_f[i];
@@ -671,3 +671,7 @@ int main() {
 
 ## 七、Q&A
 
+
+1. 指针
+2. 数据在内存中的存储位置
+3. MCU 的程序存储/布局
