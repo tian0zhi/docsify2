@@ -5,33 +5,33 @@
 ![](./pic/fig2.png )
 <center>C程序具体过程</center>
 
-1.预编译:
++ 1.预编译:
 
-删除注释；
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;删除注释；
 
-宏替换；
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;宏替换；
 
-预编译指令:#include #if #elif #endif；
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;预编译指令:#include #if #elif #endif；
 
-2.编译:
++ 2.编译:
 
-词法，语法，语义的解析；
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;词法，语法，语义的解析；
 
-代码优化；
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;代码优化；
 
-符号汇总(数据和函数名会生成符号)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;符号汇总(数据和函数名会生成符号)
 
-3.汇编:
++ 3.汇编:
 
-将汇编指令转化为二进制；
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;将汇编指令转化为二进制；
 
-生成各个section；
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;生成各个section/段；
 
-生成符号表
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;生成符号表
 
-4.链接:
++ 4.链接:
 
-合并各个section，调整段大小及段的起始位置，合并符号表，进行符号解析。
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;合并各个section，调整段大小及段的起始位置，合并符号表，进行符号解析。
 
 
 
@@ -44,11 +44,421 @@
  
 	 编译器(gcc)将用户写好的.c文件编译（预编译、编译、汇编）成汇编指令文件.o。
 
+
  2. 链接
 
 	 连接器ld将汇编指令文件.o与工程依赖的第三方库——静态库.a、动态库.so链接到一起，最终才生成可执行程序。
 
-## 二、编译&链接工具——gcc、make、cmake
+linux编译-链接完成的可执行程序实际上是一种**文件**，这个文件遵循ELF格式，本质上与txt文件没什么不同。
+
+<center>
+
+![](./pic/fig20.png )
+
+</center>
+<center>ELF文件</center>
+
+
+|段 |段名|存放内容|
+|-|- |-|
+|.txt|代码(指令)段|程序实现的汇编指令|
+|.rodata|常量段|全局常量(const)、字符串常量|
+|.data|数据段|**已初始化的**全局变量(也包括static local & static global)|
+|.bss|零段|**未初始化的**全局变量(也包括static local & static global)|
+|other|其它|不详细叙述|
+
+
+## ~~二、C语言数据的内存位置-栈、堆、全局、局部、静态、动态~~
+## 二、从文件到内存-栈、堆、全局、局部、静态、动态
+
+生成可执行文件(ELF Format)后，这个程序如何执行？以含操作系统的方式为例：
+<center>
+
+![](./pic/fig21.png )
+
+</center>
+<center>从ELF文件，经由os，加载到内存(存储态->运行态)</center>
+
+
+<center>
+
+![](./pic/fig22.png )
+
+</center>
+<center>从代码到内存</center>
+
+- 栈：
+
+&nbsp;&nbsp;&nbsp;&nbsp; 1. 栈保存函数的局部变量（不包括 static 修饰的变量），参数以及返回值。是一种后进先出（LIFO）的数据结构。
+
+&nbsp;&nbsp;&nbsp;&nbsp; 2. 在调用函数或过程后，系统会清除栈上保存的局部变量、函数调用信息及其他信息。
+
+&nbsp;&nbsp;&nbsp;&nbsp; 3. 栈的另外一个重要特征是，它的地址空间 向下减少，即当栈上保存的数据越多，栈的地址越低。静态内存分配
+
+&nbsp;&nbsp;&nbsp;&nbsp; 4. 注意，由于栈的空间通常比较小（why?），一般 linux 程序只有几 M，故局部变量，函数入参应该避免出现超大栈内存使用，比如超大结构体，数组等，避免出现 stack overflow。
+
+**Answer：**
+
+&nbsp;&nbsp;&nbsp;&nbsp; 1. 大块的内存不适合用动态「增长／回退」的方式进行管理。Heap 的动态规划管理对短生命期的块会尽量动态重用。长生命期的块就更不用说了。
+
+&nbsp;&nbsp;&nbsp;&nbsp; 2. Stack 的最顶端一般会留存在 CPU registers 和 cache 中。遇到频繁但是层次不多的函数调用，可以利用高速 cache。大块的内存会破坏这种优化。
+
+- 堆：
+
+
+&nbsp;&nbsp;&nbsp;&nbsp; 1. 堆保存函数内部动态分配（malloc 或 new）的内存，是另外一种用来保存程序信息的数据结构。
+
+&nbsp;&nbsp;&nbsp;&nbsp; 2. 堆是先进先出（FIFO）数据结构。堆的地址空间是向上增加，即当堆上保存的数据越多，堆的地址越高。动态内存分配
+
+&nbsp;&nbsp;&nbsp;&nbsp;**PS：** 堆内存需要程序员手动管理内存，通常适用于较大的内存分配，如频繁的分配较小的内存，容易导致内存碎片化。
+
+**变量类型与存储位置**
+
+我们同一把.bss 与.data 合称为全局区。
+
+<center>
+
+![](./pic/fig23.png )
+
+</center>
+
+
+
+
+
+1. 经由static修饰的变量，总是在全局区里（2*2 = 4），static 修饰全局变量代表该变量只能被同一文件下的成员访问；
+
+<center>
+
+![](./pic/fig24.png )
+
+</center>
+
+
+
+
+2. 余下四种，变量作用域为局部的总在栈里（字符串常量除外，它在.rodata段里）；
+
+
+
+<center>
+
+![](./pic/fig25.png )
+
+</center>
+
+
+
+3. 余下的两种，全局变量在全局区里，全局常量const在.rodata段里；
+
+<center>
+
+![](./pic/fig26.png )
+
+</center>
+
+4. 最终根据全局区变量有无初始化，分别在.data与.bss段里。
+
+
+
+## 三、CPU是无情执行指令的机器
+
+<center>
+
+![](./pic/fig19.png )
+
+</center>
+<center>CPU与内存中的程序</center>
+
+
+
+## 四、一切变量皆内存——指针！指针！
+
+<center>
+
+![](./pic/fig15.png )
+
+</center>
+<center>4个字节的整数int32</center>
+
+C语言中内存地址的编号是以字节为单位的
+
+
+<center>
+
+![](./pic/fig16.png )
+
+</center>
+
+<center>变量、地址与字节</center>
+
+
+
+<center>
+
+![](./pic/fig17.png )
+
+</center>
+<center>变量a、b的指针</center>
+
+
+1. **一切指针都是储存地址编号**
+2. **指针的类型决定编译器如何根据偏移量来寻址**
+
+
+<center>
+
+![](./pic/fig27.png )
+
+</center>
+
+
+<center>栈-FILO</center>
+
+
+```c
+// x86-64 64位
+int main()
+{
+    int  a1 = 100;
+    int  a2 = 200;
+    int * pa2 = &a2;
+    printf("*((int *)(&pa2) + 2):%d\n",*((int *)(&pa2) + 2));
+    printf("*((int *)(&pa2 + 1):%d\n",*((int *)(&pa2 + 1)));
+    //printf("sizeof(pa2):%d\n",sizeof(pa2));
+    return 0;
+}
+```
+
+
+
+
+**Question:** p_b - p_a = ?
+
+**Answer:**
+
+<!-- tabs:start -->
+
+#### **4**
+```
+4
+```
+#### **other**
+在C语言中，指针的加减遵循以下规则：
+
+1. **指针的加法**：对指针加上一个整数值`i`，结果是指针向后移动了`i`个元素的位置(移动了`i*sizeof(type)`字节数)。指针的类型决定了移动的步长，即指针所指向的数据类型的大小。
+
+2. **指针的减法**：对指针减去一个整数值，结果是指针向前移动了若干个元素的位置。指针的类型决定了移动的步长，即指针所指向的数据类型的大小。
+
+3. **指针之间的减法**：可以对两个指针进行减法运算，其结果是两个指针之间相差的元素个数，而不是它们的地址差值。
+
+&nbsp;&nbsp;&nbsp;&nbsp;要特别注意的是，进行指针运算时，必须确保指针指向的内存位置是合法的，否则可能导致未定义行为或错误。以下是一个简单的示例来演示指针的加减运算：
+
+&nbsp;&nbsp;&nbsp;&nbsp;总的来说指针加减法根据元素偏移量+变量类型来决定绝对地址的偏移量。
+
+```c
+#include <stdio.h>
+
+int main() 
+{
+    int arr[] = {10, 20, 30, 40, 50};
+    int *ptr = arr; // ptr指向数组的第一个元素
+
+    printf("ptr指向的值：%d\n", *ptr); // 输出：10
+
+    // 指针加法
+    ptr = ptr + 2; // ptr移动两个元素位置
+    printf("ptr指向的值：%d\n", *ptr); // 输出：30
+
+    // 指针减法
+    ptr = ptr - 1; // ptr向前移动一个元素位置
+    printf("ptr指向的值：%d\n", *ptr); // 输出：20
+
+    // 指针之间的减法
+    int *ptr2 = arr + 4; // ptr2指向数组的最后一个元素
+    int diff = ptr2 - ptr; // 计算ptr2和ptr之间的元素个数
+    printf("指针之间的元素个数：%d\n", diff); // 输出：3
+
+    return 0;
+}
+```
+
+&nbsp;&nbsp;&nbsp;&nbsp;在这个示例中，我们声明了一个整型数组`arr`，并创建一个指向数组第一个元素的指针`ptr`。然后，我们对指针`ptr`进行加法和减法运算，演示了指针的移动。最后，我们对两个指针`ptr`和`ptr2`进行减法运算，计算它们之间的元素个数，即数组中相差的元素个数。
+
+<!-- tabs:end -->
+
+**Question:** 有一个长度为1000的float数组(滤波后的信号)，我们想把它转换成长度为1000的整数数组(加速计算)，如何做？（在FTU/故指）
+
+**Answer:**
+
+<!-- tabs:start -->
+
+#### **容易想到的**
+```c
+float sig_f[1000] = {0.};
+
+int main()
+{
+    int sig_int[1000];
+    int i = 0;
+    for(;i<1000;++i)
+    {
+        sig_int[i] = (int)sig_f[i];
+    }
+    return 0;
+}
+
+
+```
+
+#### **优化方案**
+```c
+// 节省了1000*4字节的内存
+float sig_f[1000] = {0.};
+
+int main()
+{
+    int i = 0;
+    int *p_sig_int = (int *)sig_f;
+    for(;i<1000;++i)
+    {
+        p_sig_int[i] = (int)sig_f[i];
+    }
+    return 0;
+}
+
+```
+
+<!-- tabs:end -->
+
+
+<center>
+
+![](./pic/fig27.png )
+
+</center>
+
+<center>栈-FILO</center>
+
+**Question:** a是变量吗？
+```c
+int a[3] = {11,12,13};
+int b = 14;
+
+int main()
+{
+    //.....
+    return 0;
+}
+```
+
+**Answer：** Yes or No
+
+
+<!-- tabs:start -->
+
+#### **Yes**
+是变量，why?
+
+
+
+#### **证据**
+<center>
+
+![](./pic/fig28.png )
+
+</center>
+
+```bash
+objdump -s -j .data a.out
+```
+
+#### **No**
+不是变量！只是个符号，所以`&a`的操作并不是与变量相同意义上的取地址运算，对于数组符号(数值上)来说`a == &a`。
+
+<!-- tabs:end -->
+
+
+
+**Question:** 有一个长度为1000的int数组，我们想把它转换成长度为10*100的整数数组，如何做？（在FTU/故指）
+
+**Answer:**
+
+<!-- tabs:start -->
+
+#### **容易想到的**
+```c
+int sig[1000] = {0};
+
+int main()
+{
+    int sig_2dim[10][100];
+    // 二重循环遍历二维数组
+    for (int row_i = 0; row_i < rows; row_i++) 
+    {
+        for (int col_j = 0; col_j < columns; col_j++) 
+        {
+            sig_2dim[row_i][col_j] = sig[row_i*100+col_j];
+        }
+    }
+    return 0;
+
+}
+
+
+```
+
+#### **优化方案1**
+```c
+// 节省了(1000 - 20)*4字节的内存
+int sig[1000] = {0};
+
+int main()
+{
+    int * sig_2dim[100];
+    for(int i = 0; i < 10; ++i)
+    {
+        sig_2dim[i] = &sig[i*100];
+    }
+    return 0;
+}
+
+
+```
+
+#### **优化方案2**
+```c
+// 节省了(1000-2)*4字节的内存,可读性提升
+int sig[1000] = {0};
+typedef int (*p_arr_100)[100];
+
+int main()
+{
+    p_arr_100 sig_2dim = (p_arr_100)sig;
+    //=>
+    //int (*p_arr_100)[100];
+    //p_arr_100 = (int (*)[100])sig;
+    return 0;
+}
+
+
+```
+
+<!-- tabs:end -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 五、编译&链接工具——gcc、make、cmake
 
 
 ![](./pic/fig3.png )
@@ -212,7 +622,20 @@ include_directories(liba libb)
 <center>cmake操作</center>
 
 
-## 三、编译与优化(Release or Debug)——On
+**build.sh**
+```bash
+rm -rf build
+mkdir build
+cd ./build
+# make clean
+cmake ..
+make -j2
+cd ..
+
+
+```
+
+## 六、编译与优化(Release or Debug)——On
 ![](./pic/fig7.png )
 <center>CAM工程里的相关操作</center>
 
@@ -225,11 +648,11 @@ include_directories(liba libb)
 ```c
 #include<stdio.h>
 
-int fun()
+int fun()//如果这个函数名为delay？
 {
     int a = 0;
     int i = 0;
-    for(;i<10;++i)
+    for(;i<1000;++i)
     {
         a++;
     }
@@ -245,7 +668,7 @@ int main()
 
 ```
 
-在这个c语言代码中我们真的想让a循环++10次来得到a的值。
+在这个c语言代码中我们真的想让a循环++1000次来得到a的值。
 
 ![](./pic/fig9.png )
 <center>代码及对应的汇编指令-O0优化</center>
@@ -276,122 +699,10 @@ int main()
 
 
 
-## ~~四、C语言数据的内存位置-栈、堆、全局、局部、静态、动态~~
-
-## 五、一切变量皆内存
-
-![](./pic/fig15.png )
-<center>4个字节的整数int32</center>
-
-C语言中内存地址的编号是以字节为单位的
-
-![](./pic/fig16.png )
-<center>变量、地址与字节</center>
 
 
-![](./pic/fig17.png )
-<center>变量a、b的指针</center>
 
-**Question:** p_b - p_a = ?
-
-**Answer:**
-
-<!-- tabs:start -->
-
-#### **1**
-```
-1
-```
-#### **other**
-在C语言中，指针的加减遵循以下规则：
-
-1. **指针的加法**：对指针加上一个整数值`i`，结果是指针向后移动了`i`个元素的位置(移动了`i*sizeof(type)`字节数)。指针的类型决定了移动的步长，即指针所指向的数据类型的大小。
-
-2. **指针的减法**：对指针减去一个整数值，结果是指针向前移动了若干个元素的位置。指针的类型决定了移动的步长，即指针所指向的数据类型的大小。
-
-3. **指针之间的减法**：可以对两个指针进行减法运算，其结果是两个指针之间相差的元素个数，而不是它们的地址差值。
-
-&nbsp;&nbsp;&nbsp;&nbsp;要特别注意的是，进行指针运算时，必须确保指针指向的内存位置是合法的，否则可能导致未定义行为或错误。以下是一个简单的示例来演示指针的加减运算：
-
-```c
-#include <stdio.h>
-
-int main() 
-{
-    int arr[] = {10, 20, 30, 40, 50};
-    int *ptr = arr; // ptr指向数组的第一个元素
-
-    printf("ptr指向的值：%d\n", *ptr); // 输出：10
-
-    // 指针加法
-    ptr = ptr + 2; // ptr移动两个元素位置
-    printf("ptr指向的值：%d\n", *ptr); // 输出：30
-
-    // 指针减法
-    ptr = ptr - 1; // ptr向前移动一个元素位置
-    printf("ptr指向的值：%d\n", *ptr); // 输出：20
-
-    // 指针之间的减法
-    int *ptr2 = arr + 4; // ptr2指向数组的最后一个元素
-    int diff = ptr2 - ptr; // 计算ptr2和ptr之间的元素个数
-    printf("指针之间的元素个数：%d\n", diff); // 输出：2
-
-    return 0;
-}
-```
-
-&nbsp;&nbsp;&nbsp;&nbsp;在这个示例中，我们声明了一个整型数组`arr`，并创建一个指向数组第一个元素的指针`ptr`。然后，我们对指针`ptr`进行加法和减法运算，演示了指针的移动。最后，我们对两个指针`ptr`和`ptr2`进行减法运算，计算它们之间的元素个数，即数组中相差的元素个数。
-
-<!-- tabs:end -->
-
-**Question:** 有一个长度为1000的float数组(滤波后的信号)，我们想把它转换成长度为1000的整数数组(加速计算)，如何做？（在FTU/故指）
-
-**Answer:**
-
-<!-- tabs:start -->
-
-#### **容易想到的**
-```c
-float sig_f[1000] = {0.};
-
-int main()
-{
-    int sig_int[1000];
-    int i = 0;
-    for(;i<1000;++i)
-    {
-        sig_int[i] = (int)sig_f[i];
-    }
-}
-
-
-```
-
-#### **优化方案**
-```c
-// 节省了1000*4字节的内存
-float sig_f[1000] = {0.};
-
-int main()
-{
-    int i = 0;
-    int *p_sig_int = (int *)sig_f;
-    for(;i<1000;++i)
-    {
-        p_sig_int[i] = (int)sig_f[i];
-    }
-}
-
-```
-
-<!-- tabs:end -->
-
-
-**Question:** 有一个长度为1000的int数组，我们想把它转换成长度为10*100的整数数组，如何做？（在FTU/故指）
-
-**Answer:**?
-
-## 六、注意事项
+## 七、注意事项
 
 ### 1.一行代码只实现一个运算功能
 ```c
@@ -669,7 +980,7 @@ int main() {
 在上述例子中，被除数是17，除数是5。它们相除的结果是3，因为17除以5等于3余2，但由于整数除法的特性，只保留了整数部分，即3。
 
 
-## 七、Q&A
+## 八、Q&A
 
 
 1. 指针
