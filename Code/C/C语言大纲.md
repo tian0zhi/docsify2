@@ -11,7 +11,7 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;宏替换；
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;预编译指令:#include #if #elif #endif；
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;预编译指令:`#include  #define  #if  #elif  #endif`。
 
 + 2.编译:
 
@@ -19,7 +19,7 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;代码优化；
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;符号汇总(数据和函数名会生成符号)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;符号汇总(数据和函数名会生成符号)。
 
 + 3.汇编:
 
@@ -27,7 +27,7 @@
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;生成各个section/段；
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;生成符号表
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;生成符号表。
 
 + 4.链接:
 
@@ -40,13 +40,14 @@
 
 **c语言到机器可理解语言的过程简单可分为两步：**
 
- 1. 编译 
  
-	 编译器(gcc)将用户写好的.c文件编译（预编译、编译、汇编）成汇编指令文件.o。
+ 
+!> **1. 编译** :
+编译器(gcc)将用户写好的.c文件编译（预编译、编译、汇编）成汇编指令文件.o。
 
 
- 2. 链接
-
+ 
+!> **2. 链接** :
 	 连接器ld将汇编指令文件.o与工程依赖的第三方库——静态库.a、动态库.so链接到一起，最终才生成可执行程序。
 
 linux编译-链接完成的可执行程序实际上是一种**文件**，这个文件遵循ELF格式，本质上与txt文件没什么不同。
@@ -216,6 +217,7 @@ C语言中内存地址的编号是以字节为单位的
 <center>栈-FILO</center>
 
 
+**栈相关**
 ```c
 // x86-64 64位
 int main()
@@ -229,7 +231,19 @@ int main()
     return 0;
 }
 ```
+**指针运算相关**
 
+```c
+int main()
+{
+    float *pf = (float *)0;
+    double *pd = (double *)0;
+    ++pf;
+    ++pd;
+    printf("pf:%x\n",pf);
+    printf("pd:%x\n",pd);
+}
+```
 
 
 
@@ -374,7 +388,7 @@ objdump -s -j .data a.out
 ```
 
 #### **No**
-不是变量！只是个符号，所以`&a`的操作并不是与变量相同意义上的取地址运算，对于数组符号(数值上)来说`a == &a`。
+!> **Important** :不是变量！只是个符号，所以`&a`的操作并不是与变量相同意义上的取地址运算，对于数组符号(数值上)来说`(int *)a == (int *)(&a)`。
 
 <!-- tabs:end -->
 
