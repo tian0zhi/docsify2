@@ -9,18 +9,24 @@
 - 使能所需外设
 - 配置外设的工作模式
 - 使用外设
+  
 
-<p align="center">
-        <img src="../Embedded/pic_stm32/pic5.png" width="60%"/>
-        <br>
-       LED 链接端口
-</p>
+<center>
 
-<p align="center">
-        <img src="../Embedded/pic_stm32/pic6.png" width="60%"/>
-        <br>
-       LED 链接GPIO——PF9,GPIOF的第九位
-</p>
+![](./pic_stm32/pic5.png ':size=60%')
+
+LED 链接端口
+
+</center>
+
+
+<center>
+
+![](./pic_stm32/pic6.png ':size=60%')
+
+LED 链接GPIO——PF9,GPIOF的第九位
+
+</center>
 
 
 ```c
@@ -47,29 +53,21 @@ int main()
     return 0;
 }
 ```
-<p align="center">
-        <img src="../Embedded/pic_stm32/pic2.png" width="100%"/>
-        <br>
-        在GPIO_F所在总线寄存器上使能GPIO_F
-</p>
+![](./pic_stm32/pic2.png ':size=100%')
+<center>在GPIO_F所在总线寄存器上使能GPIO_F
+</center>
 
-<p align="center">
-        <img src="../Embedded/pic_stm32/pic3.png" width="100%"/>
-        <br>
-       配置GPIO_F工作模式
-</p>
+![](./pic_stm32/pic3.png ':size=100%')
+<center>配置GPIO_F工作模式
+</center>
 
-<p align="center">
-        <img src="../Embedded/pic_stm32/pic1.png" width="100%"/>
-        <br>
-       配置GPIO_F输出
-</p>
+![](./pic_stm32/pic1.png ':size=100%')
+<center>配置GPIO_F输出
+</center>
 
-<p align="center">
-        <img src="../Embedded/pic_stm32/pic4.png" width="100%"/>
-        <br>
-       寄存器起始位置映射
-</p>
+![](./pic_stm32/pic4.png ':size=100%')
+<center>寄存器起始位置映射
+</center>
 
 
 ### **1.2&nbsp;&nbsp;寄存器配置中的位运算**
@@ -100,36 +98,50 @@ u_int8 b = 3;//0000 0011
 
 - **寄存器地址**
 
-<p align="center">
-        <img src="../Embedded/pic_stm32/pic7.png" width="100%"/>
-</p>
+<center>
+
+![](./pic_stm32/pic7.png ':size=100%')
+
+</center>
+
 
 - **寄存器定义过程分析**
-<p align="center">
-        <img src="../Embedded/pic_stm32/pic8.png" width="100%"/>
-</p>
 
-<p align="center">
-        <img src="../Embedded/pic_stm32/pic9.png" width="100%"/>
-</p>
+<center>
 
-<p align="center">
-        <img src="../Embedded/pic_stm32/pic10.png" width="100%"/>
-</p>
+![](./pic_stm32/pic8.png ':size=100%')
+
+</center>
+
+<center>
+
+![](./pic_stm32/pic9.png ':size=100%')
+
+</center>
+
+<center>
+
+![](./pic_stm32/pic10.png ':size=100%')
+
+</center>
 
 ### **1.4&nbsp;&nbsp;按键控制蜂鸣器demo**
 
-<p align="center">
-        <img src="../Embedded/pic_stm32/pic11.png" width="30%"/>
-        <br>
-       按键连接
-</p>
+<center>
 
-<p align="center">
-        <img src="../Embedded/pic_stm32/pic12.png" width="80%"/>
-        <br>
-       对应GPIO_A0
-</p>
+![](./pic_stm32/pic11.png ':size=30%')
+
+按键连接
+
+</center>
+
+<center>
+
+![](./pic_stm32/pic12.png ':size=80%')
+
+对应GPIO_A0
+
+</center>
 
 因此，要配置GPIO A与F的寄存器。
 全局定义：
