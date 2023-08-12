@@ -10,7 +10,8 @@
 <!-- Theme: Simple -->
 <link rel="shortcut icon" href="fa.png" type="image/x-icon"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
-<link href="/prism/themes/prism.css" rel="stylesheet" />
+
+<link href="/ex_docsify_lib/prism/themes/prism.css" rel="stylesheet" />
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" />
 </head>
 
@@ -19,6 +20,17 @@ body {
     font: normal 20px  "Times New Roman","楷体", Verdana, Arial, sans-serif;
 }
 
+input::-webkit-input-placeholder {
+         /* placeholder颜色  */
+         color: #ff0000;
+         /* placeholder位置  */
+         text-align: left;
+         font: normal 20px  "Times New Roman","楷体"
+     }
+
+     input {
+         font: normal 20px  "Times New Roman","楷体"
+     }
 
 </style>
 
@@ -32,16 +44,9 @@ body {
       nameLink: '/#/README',
       search: {
   paths: 'auto',
-  placeholder: '请输入要搜索的关键字',
+  placeholder: '输入查找的内容',
   noData: '没有结果',
-  depth: 6,
-  tabs: {
-    persist    : true,      // default
-    sync       : true,      // default
-    theme      : 'classic', // default
-    tabComments: true,      // default
-    tabHeadings: true       // default
-  }
+  depth: 8,
 },
 coverpage: true,
 loadSidebar: true,
@@ -62,7 +67,7 @@ topMargin: 40
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
   <!-- CDN files for docsify-katex -->
 <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
-<script src="/docsify-katex-1.4.4/dist/docsify-katex.js"></script>
+<script src="/ex_docsify_lib/docsify-katex-1.4.4/dist/docsify-katex.js"></script>
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"/>
 
 <!--script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script-->
@@ -80,9 +85,9 @@ topMargin: 40
 <!-- 图片缩放 -->
 <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
 
-<script src="/prism/components/prism-c.min.js"></script>
-<script src="/prism/components/prism-cpp.min.js"></script>
-<script src="/prism/components/prism-makefile.min.js"></script>
+<script src="/ex_docsify_lib/prism/components/prism-c.min.js"></script>
+<script src="/ex_docsify_lib/prism/components/prism-cpp.min.js"></script>
+<script src="/ex_docsify_lib/prism/components/prism-makefile.min.js"></script>
 <script src="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/docsify-sidebar-collapse.min.js"></script>
 
 <!-- Latest alter-->
@@ -94,7 +99,7 @@ topMargin: 40
 <!-- <script src="https://cdn.bootcdn.net/ajax/libs/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script> -->
 
 
-<link rel="stylesheet" href="/prism/themes/prism.css">
+<link rel="stylesheet" href="/ex_docsify_lib/prism/themes/prism.css">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css"/>
 
 </body>
