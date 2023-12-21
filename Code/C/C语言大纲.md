@@ -727,11 +727,46 @@ int main()
 <center>通过gdbtui -q 调试debug模式下的程序</center>
 
 
+## 七、声明与定义
+
+<!-- tabs:start -->
+
+#### **头文件.h**
+
+```c
+//a.h
+#ifndef A_H
+#define A_H
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+//声明
+extern{static} int a_variable;
+extern{static} int arr[];
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif /* HEAD_H */
+```
+
+#### **源文件.c**
+
+```c
+
+//定义
+int a_variable = 10;
+int arr[9];
+
+```
+
+<!-- tabs:end -->
 
 
-
-
-## 七、注意事项
+## Other、注意事项
 
 ### 1.一行代码只实现一个运算功能
 ```c
@@ -1008,10 +1043,3 @@ int main() {
 
 在上述例子中，被除数是17，除数是5。它们相除的结果是3，因为17除以5等于3余2，但由于整数除法的特性，只保留了整数部分，即3。
 
-
-## 八、Q&A
-
-
-1. 指针
-2. 数据在内存中的存储位置
-3. MCU 的程序存储/布局

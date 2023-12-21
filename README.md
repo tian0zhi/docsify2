@@ -24,6 +24,8 @@
 
 - [Paper write 文章写作](Paper_write/README.md)
 
+- [Test 测试](Git+VSCode问题帮助.md)
+
 -  <a href="./docsify_demo/">Docsify Demo 测试用例</a>
 
 <p>
