@@ -12,7 +12,7 @@
 
 <center>
 
-![](./pic/fig1.png ':size=90%')
+![](./pic/Fig1.png ':size=90%')
 
 </center>
 
@@ -53,7 +53,7 @@
 
 <center>
 
-![](./pic/fig2.png ':size=90%')
+![](./pic/Fig2.png ':size=90%')
 
 </center>
 
@@ -86,7 +86,7 @@ $$T=\{(x_1,y_1),(x_1,y_1),(x_1,y_1),...,(x_N,y_N)\}$$
 
 <center>
 
-![](./pic/fig3.png ':size=50%')
+![](./pic/Fig3.png ':size=50%')
 
 </center>
 
@@ -109,7 +109,7 @@ $$T=\{(x_1,y_1),(x_1,y_1),(x_1,y_1),...,(x_N,y_N)\}$$
 
 <center>
 
-![](./pic/fig4.png ':size=50%')
+![](./pic/Fig4.png ':size=50%')
 
 </center>
 
@@ -130,7 +130,7 @@ $$T=\{(x_1,y_1),(x_1,y_1),(x_1,y_1),...,(x_N,y_N)\}$$
 
 <center>
 
-![](./pic/fig5.png ':size=50%')
+![](./pic/Fig5.png ':size=50%')
 
 </center>
 
@@ -150,7 +150,7 @@ $$乘法规则: P(x,y)=P(y|x)P(x) $$
 
 <center>
 
-![](./pic/fig6.png ':size=50%')
+![](./pic/Fig6.png ':size=50%')
 
 </center>
 
@@ -161,7 +161,7 @@ $$乘法规则: P(x,y)=P(y|x)P(x) $$
 
 <center>
 
-![](./pic/fig7.png ':size=50%')
+![](./pic/Fig7.png ':size=50%')
 
 </center>
 
@@ -177,7 +177,7 @@ $$乘法规则: P(x,y)=P(y|x)P(x) $$
 
 <center>
 
-![](./pic/fig8.png ':size=50%')
+![](./pic/Fig8.png ':size=50%')
 
 </center>
 
@@ -203,7 +203,7 @@ $$P(x|D)=\int P(x|\theta ,D)P(\theta |D)d\theta $$
 
 <center>
 
-![](./pic/fig9.png ':size=60%')
+![](./pic/Fig9.png ':size=60%')
 
 </center>
 
@@ -460,7 +460,7 @@ $$sign(x)=\left\{\begin{matrix}
 
 <center>
 
-![](./pic/fig10.png ':size=40%')
+![](./pic/Fig10.png ':size=40%')
 
 </center>
 
@@ -579,7 +579,7 @@ $$L_\infty(x_i,x_j)=max_l|x_i^{(l)}-x_j^{(l)}|$$
 
 <center>
 
-![](./pic/fig11.png ':size=40%')
+![](./pic/Fig11.png ':size=40%')
 
 </center>
 
