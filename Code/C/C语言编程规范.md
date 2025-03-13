@@ -220,7 +220,7 @@ char_poi = str;
 ```c
 /************************************************************************
 
-    Copyright © topscomm.com Inc. 2008-2020. All rights reserved.*
+    Copyright © XXXXX Inc. 2008-2020. All rights reserved.*
     File name:         // 文件名
     Author:            // 作者
     Description:       // 用于详细说明此程序文件完成的主要功能，与其他模块
